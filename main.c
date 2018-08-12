@@ -30,6 +30,7 @@ void main()
     pin_set(A15);
 
     // setup PIN
+    /*
     gpio_enable(A0, GPIO_MODE_IN_PULLDOWN);
     gpio_enable(A1, GPIO_MODE_IN_PULLDOWN);
 
@@ -45,13 +46,17 @@ void main()
     NVIC_EnableIRQ(EXTI0_1_IRQn);
 
     for (;;);
-
+    */
     /* USB RELAY */
-    /*
+    gpio_enable(A0, GPIO_MODE_OUT);
+    gpio_enable(A1, GPIO_MODE_OUT);
+    gpio_enable(B7, GPIO_MODE_OUT);
+    gpio_enable(B8, GPIO_MODE_OUT);
+
     bool switch_flag = false;
     for(;;)
     {
-        delay_ms(5000);
+        delay_ms(2000);
         if(switch_flag)
         {
             // POWER
@@ -76,7 +81,6 @@ void main()
         }
         switch_flag = !switch_flag;
     }
-    */
 }
 
 
