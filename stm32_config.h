@@ -14,7 +14,7 @@
 
 //------------------------------ POWER -----------------------------------------
 //depends on hardware implementation
-#define POWER_MANAGEMENT                        0
+#define POWER_MANAGEMENT                        1
 //save few bytes here
 #define STM32_DECODE_RESET                      0
 //0 meaning HSI. If not defined, 25MHz will be defined by default by ST lib
@@ -45,9 +45,9 @@
 //Use UART as default stdio
 #define UART_STDIO                              1
 //PIN_DEFAULT and PIN_UNUSED can be also set.
-#define UART                                    UART_3
-#define UART_TX_PIN                             C10
-#define UART_AF_NUMBER                          AF1
+#define UART                                    UART_1
+#define UART_TX_PIN                             A9
+#define UART_AF_NUMBER                          AF4
 #define UART_BAUD                               115200
 #define UART_DATA_BITS                          8
 #define UART_PARITY                             'N'

@@ -6,10 +6,10 @@
  */
 
 #include <stdbool.h>
-#include "stm32/stm32.h"
+#include "../stm32/stm32.h"
 #include "stm32_power.h"
 
-#include "../stm32_config.h"
+#include "stm32_config.h"
 
 
 #if defined(STM32F1)

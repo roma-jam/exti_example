@@ -25,10 +25,9 @@ void main()
     printf("%s core, %d MHz\n", __MCU, power_get_core_clock() / 1000000);
 #endif // DFU_DEBUG
 
-
     // enable blue LED
-    gpio_enable(C7, GPIO_MODE_OUT);
-    pin_set(C7);
+    gpio_enable(A15, GPIO_MODE_OUT);
+    pin_set(A15);
 
     // setup PIN
     gpio_enable(A0, GPIO_MODE_IN_PULLDOWN);
@@ -45,7 +44,39 @@ void main()
     NVIC_SetPriority(EXTI0_1_IRQn, 20);
     NVIC_EnableIRQ(EXTI0_1_IRQn);
 
-    for(;;) { }
+    for (;;);
+
+    /* USB RELAY */
+    /*
+    bool switch_flag = false;
+    for(;;)
+    {
+        delay_ms(5000);
+        if(switch_flag)
+        {
+            // POWER
+            printf("Power Off\n");
+            pin_set(A0);
+            pin_reset(A1);
+            delay_ms(200);
+            // DM, DP
+            pin_reset(B7);
+            pin_set(B8);
+        }
+        else
+        {
+            printf("Power On\n");
+            pin_reset(A0);
+            pin_set(A1);
+            delay_ms(200);
+            // DM, DP
+            pin_set(B7);
+            pin_reset(B8);
+
+        }
+        switch_flag = !switch_flag;
+    }
+    */
 }
 
 

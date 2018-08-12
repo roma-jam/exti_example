@@ -14,8 +14,10 @@ OBJDUMP                    = $(CROSS)objdump
 NM                         = $(CROSS)nm
 
 #----------------------------------------------------------
-MCU							= STM32F072RB
-LIB_FOLDER					= STM32F0xx
+#MCU							= STM32F072RB
+MCU 						= STM32L052K8
+LIB_FOLDER					= STM32L0xx
+#LIB_FOLDER					= STM32F0xx
 
 $(info MCU: $(MCU))
 
